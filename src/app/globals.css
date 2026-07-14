@@ -1,26 +1,121 @@
 @import "tailwindcss";
 
+/* ------------------------------------------------------------------ */
+/*  Brain Recharge Global School - Design System                       */
+/* ------------------------------------------------------------------ */
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-poppins), var(--font-inter), sans-serif;
+
+  /* Brand - energetic indigo (trust + intellect) */
+  --color-brand-50: #eef2ff;
+  --color-brand-100: #e0e7ff;
+  --color-brand-200: #c7d2fe;
+  --color-brand-300: #a5b4fc;
+  --color-brand-400: #818cf8;
+  --color-brand-500: #6366f1;
+  --color-brand-600: #4f46e5;
+  --color-brand-700: #4338ca;
+  --color-brand-800: #3730a3;
+  --color-brand-900: #312e81;
+
+  /* Accent - warm amber (joy + energy) */
+  --color-accent-50: #fffbeb;
+  --color-accent-100: #fef3c7;
+  --color-accent-200: #fde68a;
+  --color-accent-300: #fcd34d;
+  --color-accent-400: #fbbf24;
+  --color-accent-500: #f59e0b;
+  --color-accent-600: #d97706;
+
+  /* Secondary pops for category chips */
+  --color-coral-500: #f43f5e;
+  --color-teal-500: #14b8a6;
+  --color-sky-500: #0ea5e9;
+
+  --color-ink: #1e1b3a;
+  --color-cream: #fffdf7;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-marquee: marquee 40s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: var(--color-ink);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* offset for sticky nav when jumping to sections */
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
+
+/* Scroll-reveal: elements start hidden, animate in when .is-visible is added */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+  /* Failsafe: if the script never takes over (blocked JS, hydration crash),
+     animate in anyway so content is never permanently hidden. */
+  animation: reveal-failsafe 0.7s cubic-bezier(0.16, 1, 0.3, 1) 2.5s forwards;
+}
+.reveal[data-observed] {
+  animation: none;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@keyframes reveal-failsafe {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    animation: none;
+  }
+  html { scroll-behavior: auto; }
+}
+
+/* Utility: subtle blurred brand blobs used as background decoration */
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(64px);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Nice thin scrollbar for horizontal rails */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+.text-balance { text-wrap: balance; }

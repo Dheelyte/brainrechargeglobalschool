@@ -46,7 +46,7 @@ export default function Hero() {
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink/70">
             At {site.name}, every child is known, nurtured and inspired to love
-            learning - in a safe, joyful and modern campus they can&apos;t wait
+            learning - in a safe, joyful and modern environment they can&apos;t wait
             to come back to.
           </p>
 
@@ -108,8 +108,8 @@ export default function Hero() {
                 🎨
               </span>
               <div className="pr-2">
-                <p className="text-sm font-bold text-ink">Creative classes</p>
-                <p className="text-xs text-ink/50">Art · Music · Drama</p>
+                <p className="text-sm font-bold text-ink">Coding & Robotics</p>
+                <p className="text-xs text-ink/50">Computer Literacy</p>
               </div>
             </div>
           </div>

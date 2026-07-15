@@ -1,5 +1,16 @@
 import { NextResponse } from "next/server";
 import { site } from "@/lib/site";
+import { inquiryWhatsAppUrl } from "@/lib/inquiry";
+
+/**
+ * No-JS fallback for the admissions form: a plain form GET lands here and we
+ * bounce the visitor to WhatsApp with the same pre-filled message the
+ * client-side handler builds.
+ */
+export function GET(req: Request) {
+  const { searchParams } = new URL(req.url);
+  return NextResponse.redirect(inquiryWhatsAppUrl(searchParams), 303);
+}
 
 /**
  * Handles admission inquiry submissions.

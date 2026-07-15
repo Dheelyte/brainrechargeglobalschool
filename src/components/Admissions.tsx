@@ -2,40 +2,26 @@
 
 import { useState } from "react";
 import { site } from "@/lib/site";
+import { inquiryWhatsAppUrl } from "@/lib/inquiry";
 
 const steps = [
   { n: "01", title: "Send an inquiry", body: "Fill the form and tell us about your child." },
-  { n: "02", title: "Book a tour", body: "Visit our campus and meet our friendly team." },
+  { n: "02", title: "Book a tour", body: "Visit our school and meet our friendly team." },
   { n: "03", title: "Simple assessment", body: "A relaxed, age-appropriate placement chat." },
   { n: "04", title: "Welcome aboard", body: "Complete enrolment and join the BRGS family." },
 ];
 
-type Status = "idle" | "loading" | "success" | "error";
+type Status = "idle" | "success";
 
 export default function Admissions() {
   const [status, setStatus] = useState<Status>("idle");
-  const [error, setError] = useState("");
 
-  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function onSubmit(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus("loading");
-    setError("");
     const form = e.currentTarget;
-    const payload = Object.fromEntries(new FormData(form).entries());
-    try {
-      const res = await fetch("/api/inquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      const data = await res.json();
-      if (!res.ok || !data.ok) throw new Error(data.error || "Failed");
-      setStatus("success");
-      form.reset();
-    } catch (err) {
-      setStatus("error");
-      setError(err instanceof Error ? err.message : "Something went wrong.");
-    }
+    window.open(inquiryWhatsAppUrl(new FormData(form)), "_blank", "noopener,noreferrer");
+    setStatus("success");
+    form.reset();
   }
 
   const field =
@@ -84,8 +70,8 @@ export default function Admissions() {
                 Thank you!
               </h3>
               <p className="mt-2 max-w-sm text-ink/65">
-                Your inquiry has been received. Our admissions team will contact
-                you within 24 hours.
+                WhatsApp has opened with your inquiry ready — just press send,
+                and our admissions team will reply within 24 hours.
               </p>
               <button
                 onClick={() => setStatus("idle")}
@@ -95,7 +81,16 @@ export default function Admissions() {
               </button>
             </div>
           ) : (
-            <form onSubmit={onSubmit} className="space-y-4">
+            <form
+              onSubmit={onSubmit}
+              // action/method/target make the form work even when JS never
+              // runs: the server route redirects the new tab to WhatsApp.
+              action="/api/inquiry"
+              method="get"
+              target="_blank"
+              rel="noopener"
+              className="space-y-4"
+            >
               <h3 className="font-display text-xl font-bold text-ink">
                 Request information
               </h3>
@@ -112,21 +107,15 @@ export default function Admissions() {
                 className={field}
               />
 
-              {status === "error" && (
-                <p className="rounded-lg bg-coral-500/10 px-4 py-2.5 text-sm font-medium text-coral-500">
-                  {error}
-                </p>
-              )}
-
               <button
                 type="submit"
-                disabled={status === "loading"}
-                className="w-full rounded-full bg-gradient-to-r from-accent-500 to-accent-600 px-6 py-3.5 font-bold text-white shadow-lg shadow-accent-500/30 transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60"
+                className="w-full rounded-full bg-gradient-to-r from-accent-500 to-accent-600 px-6 py-3.5 font-bold text-white shadow-lg shadow-accent-500/30 transition hover:-translate-y-0.5"
               >
-                {status === "loading" ? "Sending…" : "Send my inquiry"}
+                Send my inquiry via WhatsApp
               </button>
               <p className="text-center text-xs text-ink/50">
-                Prefer to talk? Call{" "}
+                Opens WhatsApp with your message ready to send. Prefer to talk?
+                Call{" "}
                 <a href={`tel:${site.phone}`} className="font-semibold text-brand-700">
                   {site.phone}
                 </a>

@@ -7,15 +7,15 @@ export const site = {
   shortName: "BRGS",
   tagline: "Where Bright Minds Begin",
   description:
-    "Brain Recharge Global School nurtures curious, confident children through joyful learning, caring teachers and a safe, modern campus. Book a tour today.",
+    "Brain Recharge Global School nurtures curious, confident children through joyful learning, caring teachers and a safe, modern environment. Book a tour today.",
   url: "https://brainrechargeglobalschool.com",
 
   // 👉 Replace with your real details
   email: "admissions@brainrechargeglobalschool.com",
-  phone: "+234 800 000 0000",
-  whatsapp: "2348000000000", // digits only, with country code
-  address: "123 Learning Avenue, Lagos, Nigeria",
-  hours: "Mon – Fri · 7:30am – 4:00pm",
+  phone: "+2348083963085",
+  whatsapp: "2348083963085", // digits only, with country code
+  address: "2, Abike Onabiyi Close, Coker Alhaja Str, Obawole, Ifako-Ijaye, Lagos.",
+  hours: "Mon - Fri · 7:00am - 6:00pm",
 
   socials: {
     youtube: "https://youtube.com/@yourchannel", // 👉 your channel

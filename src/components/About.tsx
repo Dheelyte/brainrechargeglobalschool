@@ -4,8 +4,8 @@ import photo2 from "@/photos/photo1.jpeg"
 import photo3 from "@/photos/photo3.jpeg"
 
 const pillars = [
-  { title: "Our Mission", body: "To recharge young minds with the knowledge, character and confidence to thrive in a changing world." },
-  { title: "Our Vision", body: "A community where every child discovers their gifts and grows into a kind, capable leader of tomorrow." },
+  { title: "Our Mission", body: "To expose pupils to in-depth cognitive, affective and psychomotor domains of learning." },
+  { title: "Our Vision", body: "To raise a new generation of pupils with functional education and morals" },
 ];
 
 export default function About() {
@@ -22,7 +22,7 @@ export default function About() {
             <Image src={photo3} alt="Outdoor play at the school" fill sizes="25vw" className="object-cover" />
           </div>
           <div className="absolute left-2 top-6 rounded-2xl bg-brand-600 px-5 py-4 text-white shadow-xl">
-            <p className="font-display text-3xl font-extrabold leading-none">15+</p>
+            <p className="font-display text-3xl font-extrabold leading-none">25+</p>
             <p className="text-xs font-medium text-white/80">years nurturing minds</p>
           </div>
         </Reveal>

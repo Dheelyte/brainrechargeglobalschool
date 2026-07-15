@@ -1,16 +1,18 @@
-/**
- * Site content. Everything here is placeholder copy + stock photos.
- * 👉 Replace the text and image URLs with your school's real content.
- *    To use your own photos, drop them in /public and use "/your-photo.jpg".
- */
-
 import photo4 from "@/photos/photo4.jpeg"
 import photo5 from "@/photos/photo5.jpeg"
 import photo6 from "@/photos/photo6.jpeg"
 import photo7 from "@/photos/photo7.jpeg"
 import photo8 from "@/photos/photo8.jpeg"
 import photo9 from "@/photos/photo9.jpeg"
-
+import photo10 from "@/photos/photo10.jpeg"
+import kindergarten from "@/photos/kindergarten.jpeg"
+import grade1 from "@/photos/grade1.jpeg"
+import grade4 from "@/photos/grade4.jpeg"
+import photo11 from "@/photos/photo11.jpeg"
+import photo12 from "@/photos/photo12.jpeg"
+import photo13 from "@/photos/photo13.jpeg"
+import photo14 from "@/photos/photo14.jpeg"
+import photo15 from "@/photos/photo15.jpeg"
 
 
 export type WhyUsItem = { icon: string; title: string; body: string };
@@ -18,7 +20,7 @@ export type Program = {
   name: string;
   age: string;
   blurb: string;
-  image: string;
+  image: any;
   color: string; // tailwind text color class for the accent
 };
 export type Staff = {
@@ -36,7 +38,7 @@ export type Testimonial = {
 export type GalleryImage = {
   src: any;
   alt: string;
-  category: "Campus" | "Classrooms" | "Events" | "Sports" | "Arts";
+  category: "Environment" | "Classrooms" | "Events" | "Sports" | "Arts";
 };
 
 const u = (id: string, w = 1200) =>
@@ -50,7 +52,7 @@ export const whyUs: WhyUsItem[] = [
   },
   {
     icon: "🛡️",
-    title: "Safe & Secure Campus",
+    title: "Safe & Secure Environment",
     body: "Gated grounds, trained staff and a warm environment where parents have complete peace of mind.",
   },
   {
@@ -81,7 +83,7 @@ export const programs: Program[] = [
     age: "Ages 1 – 4",
     blurb:
       "A gentle, play-based start where little ones build language, motor skills and a love of discovery in a nurturing space.",
-    image: u("1503454537195-1dcabb73ffb9"),
+    image: photo10,
     color: "text-coral-500",
   },
   {
@@ -89,7 +91,7 @@ export const programs: Program[] = [
     age: "Ages 4 – 5",
     blurb:
       "Foundational reading, numeracy and social skills through songs, stories and joyful hands-on exploration.",
-    image: u("1587654780291-39c9404d746b"),
+    image: kindergarten,
     color: "text-accent-500",
   },
   {
@@ -97,7 +99,7 @@ export const programs: Program[] = [
     age: "Ages 6 – 8",
     blurb:
       "Strong literacy and numeracy foundations paired with science, creativity and good character.",
-    image: u("1427504494785-3a9ca7044f45"),
+    image: grade1,
     color: "text-teal-500",
   },
   {
@@ -105,7 +107,7 @@ export const programs: Program[] = [
     age: "Ages 9 – 11",
     blurb:
       "Confident, independent learners prepared for secondary school through rich academics and leadership.",
-    image: u("1546410531-bb4caa6b424d"),
+    image: grade4,
     color: "text-brand-500",
   },
 ];
@@ -162,23 +164,23 @@ export const testimonials: Testimonial[] = [
 ];
 
 export const gallery: GalleryImage[] = [
-  { src: photo4, alt: "Bright, welcoming campus entrance", category: "Campus" },
+  { src: photo4, alt: "Bright, welcoming entrance", category: "Environment" },
   { src: photo5, alt: "Engaged pupils in a classroom", category: "Classrooms" },
+  { src: photo10, alt: "Cultural day celebration", category: "Events" },
+  { src: photo13, alt: "Cultural day celebration", category: "Events" },
   { src: photo6, alt: "Colourful learning materials", category: "Classrooms" },
-  { src: photo7, alt: "Children celebrating at an event", category: "Events" },
   { src: photo8, alt: "School sports day", category: "Sports" },
+  { src: photo12, alt: "Cultural day celebration", category: "Events" },
   { src: photo9, alt: "Music and arts class", category: "Arts" },
-  { src: photo4, alt: "Outdoor play area", category: "Campus" },
-  { src: photo5, alt: "Reading time in the library", category: "Classrooms" },
-  { src: photo6, alt: "Children painting together", category: "Arts" },
-  { src: photo7, alt: "Group science activity", category: "Classrooms" },
-  { src: photo8, alt: "Football practice", category: "Sports" },
-  { src: photo9, alt: "Cultural day celebration", category: "Events" },
+  { src: photo7, alt: "Cultural day celebration", category: "Events" },
+  { src: photo11, alt: "Cultural day celebration", category: "Events" },  
+  { src: photo14, alt: "Cultural day celebration", category: "Events" },
+  { src: photo15, alt: "Cultural day celebration", category: "Events" },
 ];
 
 export const galleryCategories = [
   "All",
-  "Campus",
+  "Environment",
   "Classrooms",
   "Events",
   "Sports",

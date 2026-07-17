@@ -29,8 +29,13 @@ function durationToSeconds(iso: string): number {
 }
 
 function placeholderVideos(): YTVideo[] {
-  const img = (id: string) =>
+  // Landscape crop for the 16:9 featured tiles.
+  const wideImg = (id: string) =>
     `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=800&q=80`;
+  // Portrait 9:16 crop so Shorts tiles stay sharp instead of being
+  // zoomed in from a landscape source.
+  const shortImg = (id: string) =>
+    `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=540&h=960&q=80`;
   const wide = [
     ["School Open Day Highlights", "1503676260728-1c00da094a0b"],
     ["Our Annual Cultural Festival", "1564429097439-e93896886f0d"],
@@ -49,7 +54,7 @@ function placeholderVideos(): YTVideo[] {
     ...wide.map(([title, id], i) => ({
       id: `placeholder-w-${i}`,
       title,
-      thumbnail: img(id),
+      thumbnail: wideImg(id),
       publishedAt: new Date().toISOString(),
       isShort: false,
       placeholder: true,
@@ -57,7 +62,7 @@ function placeholderVideos(): YTVideo[] {
     ...shorts.map(([title, id], i) => ({
       id: `placeholder-s-${i}`,
       title,
-      thumbnail: img(id),
+      thumbnail: shortImg(id),
       publishedAt: new Date().toISOString(),
       isShort: true,
       placeholder: true,

@@ -1,15 +1,36 @@
 import { site } from "@/lib/site";
 
+const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+  `${site.address}`,
+)}`;
+
 const contactCards = [
-  { icon: "📍", label: "Visit us", value: site.address },
-  { icon: "📞", label: "Call us", value: site.phone, href: `tel:${site.phone}` },
-  { icon: "✉️", label: "Email us", value: site.email, href: `mailto:${site.email}` },
+  {
+    icon: "📍",
+    label: "Visit us",
+    value: site.address,
+    cta: { label: "Get directions ↗", href: directionsUrl },
+  },
+  {
+    icon: "📞",
+    label: "Call us",
+    value: site.phone,
+    href: `tel:${site.phone}`,
+    cta: { label: "Call now ↗", href: `tel:${site.phone}` },
+  },
+  {
+    icon: "✉️",
+    label: "Email us",
+    value: site.email,
+    href: `mailto:${site.email}`,
+    cta: { label: "Send email ↗", href: `mailto:${site.email}` },
+  },
   { icon: "🕘", label: "Open hours", value: site.hours },
 ];
 
 export default function Footer() {
   return (
-    <footer id="contact" className="relative overflow-hidden bg-ink text-white">
+    <footer id="contact" className="section-fade relative overflow-hidden bg-ink text-white">
       <div className="blob -left-10 top-0 h-72 w-72 bg-brand-600/30" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
@@ -30,6 +51,19 @@ export default function Footer() {
                 </a>
               ) : (
                 <p className="mt-1 font-medium text-white/90">{c.value}</p>
+              )}
+              {c.cta && (
+                <a
+                  href={c.cta.href}
+                  // Only real web links open a new tab; tel:/mailto: hand off
+                  // to the phone or mail app directly.
+                  {...(c.cta.href.startsWith("http")
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                  className="mt-3 inline-block rounded-full bg-white/10 px-4 py-1.5 text-sm font-bold text-accent-300 transition hover:bg-white/20 hover:text-accent-200"
+                >
+                  {c.cta.label}
+                </a>
               )}
             </div>
           ))}

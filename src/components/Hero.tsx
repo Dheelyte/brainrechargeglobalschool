@@ -18,12 +18,15 @@ export default function Hero() {
       <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2 lg:px-8">
         {/* Copy */}
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white/70 px-4 py-1.5 text-sm font-semibold text-brand-700 shadow-sm">
+          <span className="hero-rise inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white/70 px-4 py-1.5 text-sm font-semibold text-brand-700 shadow-sm">
             <span className="h-2 w-2 animate-pulse rounded-full bg-accent-500" />
             Now accepting admissions for the new session
           </span>
 
-          <h1 className="mt-5 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-ink text-balance sm:text-5xl lg:text-6xl">
+          <h1
+            className="hero-rise mt-5 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-ink text-balance sm:text-5xl lg:text-6xl"
+            style={{ animationDelay: "0.1s" }}
+          >
             Where bright young{" "}
             <span className="relative whitespace-nowrap text-brand-600">
               minds
@@ -34,6 +37,8 @@ export default function Hero() {
                 preserveAspectRatio="none"
               >
                 <path
+                  className="hero-underline"
+                  pathLength={1}
                   d="M2 8c40-6 158-6 196 0"
                   stroke="currentColor"
                   strokeWidth="4"
@@ -44,13 +49,19 @@ export default function Hero() {
             begin to shine
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink/70">
+          <p
+            className="hero-rise mt-6 max-w-xl text-lg leading-relaxed text-ink/70"
+            style={{ animationDelay: "0.2s" }}
+          >
             At {site.name}, every child is known, nurtured and inspired to love
             learning - in a safe, joyful and modern environment they can&apos;t wait
             to come back to.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4">
+          <div
+            className="hero-rise mt-8 flex flex-wrap items-center gap-4"
+            style={{ animationDelay: "0.3s" }}
+          >
             <a
               href="#admissions"
               className="rounded-full bg-gradient-to-r from-accent-500 to-accent-600 px-7 py-3.5 text-base font-bold text-white shadow-xl shadow-accent-500/30 transition hover:-translate-y-0.5 hover:shadow-2xl"
@@ -68,7 +79,10 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="mt-8 flex items-center gap-3 text-sm text-ink/60">
+          <div
+            className="hero-rise mt-8 flex items-center gap-3 text-sm text-ink/60"
+            style={{ animationDelay: "0.4s" }}
+          >
             <div className="flex -space-x-2">
               {collage.map((src, i) => (
                 <Image
@@ -90,7 +104,7 @@ export default function Hero() {
 
         {/* Image collage */}
         <div className="relative mx-auto w-full max-w-lg">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl shadow-brand-900/20 ring-1 ring-black/5">
+          <div className="hero-zoom relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl shadow-brand-900/20 ring-1 ring-black/5">
             <Image
               src={HeroImg}
               alt="Happy pupils learning at Brain Recharge Global School"
@@ -102,29 +116,36 @@ export default function Hero() {
           </div>
 
           {/* Floating cards */}
-          <div className="absolute -left-6 top-10 hidden animate-float rounded-2xl bg-white p-3 shadow-xl ring-1 ring-black/5 sm:block">
-            <div className="flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-teal-500/15 text-xl">
-                🎨
-              </span>
-              <div className="pr-2">
-                <p className="text-sm font-bold text-ink">Coding & Robotics</p>
-                <p className="text-xs text-ink/50">Computer Literacy</p>
+          <div className="hero-pop absolute -left-6 top-10 hidden sm:block">
+            <div className="animate-float rounded-2xl bg-white p-3 shadow-xl ring-1 ring-black/5">
+              <div className="flex items-center gap-3">
+                <span className="grid h-10 w-10 place-items-center rounded-xl bg-teal-500/15 text-xl">
+                  🎨
+                </span>
+                <div className="pr-2">
+                  <p className="text-sm font-bold text-ink">Coding & Robotics</p>
+                  <p className="text-xs text-ink/50">Computer Literacy</p>
+                </div>
               </div>
             </div>
           </div>
 
           <div
-            className="absolute -right-4 bottom-10 hidden animate-float rounded-2xl bg-white p-3 shadow-xl ring-1 ring-black/5 sm:block"
-            style={{ animationDelay: "1.5s" }}
+            className="hero-pop absolute -right-4 bottom-10 hidden sm:block"
+            style={{ animationDelay: "0.85s" }}
           >
-            <div className="flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-brand-500/15 text-xl">
-                🛡️
-              </span>
-              <div className="pr-2">
-                <p className="text-sm font-bold text-ink">Safe & secure</p>
-                <p className="text-xs text-ink/50">Caring environment</p>
+            <div
+              className="animate-float rounded-2xl bg-white p-3 shadow-xl ring-1 ring-black/5"
+              style={{ animationDelay: "1.5s" }}
+            >
+              <div className="flex items-center gap-3">
+                <span className="grid h-10 w-10 place-items-center rounded-xl bg-brand-500/15 text-xl">
+                  🛡️
+                </span>
+                <div className="pr-2">
+                  <p className="text-sm font-bold text-ink">Safe & secure</p>
+                  <p className="text-xs text-ink/50">Caring environment</p>
+                </div>
               </div>
             </div>
           </div>

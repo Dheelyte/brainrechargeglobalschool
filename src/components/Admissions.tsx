@@ -28,7 +28,7 @@ export default function Admissions() {
     "w-full rounded-xl border border-brand-100 bg-white px-4 py-3 text-ink outline-none transition placeholder:text-ink/35 focus:border-brand-400 focus:ring-4 focus:ring-brand-100";
 
   return (
-    <section id="admissions" className="relative overflow-hidden bg-white py-20 lg:py-28">
+    <section id="admissions" className="section-fade relative overflow-hidden bg-white py-20 lg:py-28">
       <div className="blob -left-10 top-20 h-72 w-72 bg-brand-200" />
       <div className="relative z-10 mx-auto grid max-w-7xl items-start gap-12 px-5 lg:grid-cols-2 lg:px-8">
         {/* Left: steps */}

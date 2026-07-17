@@ -18,7 +18,7 @@ export const site = {
   hours: "Mon - Fri · 7:00am - 6:00pm",
 
   socials: {
-    youtube: "https://youtube.com/@yourchannel", // 👉 your channel
+    youtube: "https://youtube.com/@brainrechargeglobalschool", // 👉 your channel
     facebook: "#",
     instagram: "#",
   },

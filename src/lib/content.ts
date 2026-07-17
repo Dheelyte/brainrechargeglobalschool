@@ -13,12 +13,12 @@ import photo12 from "@/photos/photo12.jpeg"
 import photo13 from "@/photos/photo13.jpeg"
 import photo14 from "@/photos/photo14.jpeg"
 import photo15 from "@/photos/photo15.jpeg"
+import photo16 from "@/photos/photo16.jpeg"
 
 
 export type WhyUsItem = { icon: string; title: string; body: string };
 export type Program = {
   name: string;
-  age: string;
   blurb: string;
   image: any;
   color: string; // tailwind text color class for the accent
@@ -37,7 +37,6 @@ export type Testimonial = {
 };
 export type GalleryImage = {
   src: any;
-  alt: string;
   category: "Environment" | "Classrooms" | "Events" | "Sports" | "Arts";
 };
 
@@ -80,7 +79,6 @@ export const whyUs: WhyUsItem[] = [
 export const programs: Program[] = [
   {
     name: "Early Years (Crèche & Nursery)",
-    age: "Ages 1 – 4",
     blurb:
       "A gentle, play-based start where little ones build language, motor skills and a love of discovery in a nurturing space.",
     image: photo10,
@@ -88,7 +86,6 @@ export const programs: Program[] = [
   },
   {
     name: "Kindergarten",
-    age: "Ages 4 – 5",
     blurb:
       "Foundational reading, numeracy and social skills through songs, stories and joyful hands-on exploration.",
     image: kindergarten,
@@ -96,7 +93,6 @@ export const programs: Program[] = [
   },
   {
     name: "Lower Primary",
-    age: "Ages 6 – 8",
     blurb:
       "Strong literacy and numeracy foundations paired with science, creativity and good character.",
     image: grade1,
@@ -104,38 +100,10 @@ export const programs: Program[] = [
   },
   {
     name: "Upper Primary",
-    age: "Ages 9 – 11",
     blurb:
       "Confident, independent learners prepared for secondary school through rich academics and leadership.",
     image: grade4,
     color: "text-brand-500",
-  },
-];
-
-export const staff: Staff[] = [
-  {
-    name: "Mrs. Adaeze Okafor",
-    role: "Head Teacher",
-    image: u("1573496359142-b8d87734a5a2", 600),
-    bio: "20+ years shaping confident, kind and curious learners.",
-  },
-  {
-    name: "Mr. Daniel Bello",
-    role: "Deputy Head & Maths Lead",
-    image: u("1500648767791-00dcc994a43e", 600),
-    bio: "Makes numbers click for every child through playful problem-solving.",
-  },
-  {
-    name: "Miss Grace Eze",
-    role: "Early Years Coordinator",
-    image: u("1544005313-94ddf0286df2", 600),
-    bio: "Creates a warm, joyful first experience of school.",
-  },
-  {
-    name: "Mr. Samuel Johnson",
-    role: "Arts, Music & Sports",
-    image: u("1507003211169-0a1dd7228f2d", 600),
-    bio: "Helps children shine on stage, in song and on the field.",
   },
 ];
 
@@ -164,18 +132,19 @@ export const testimonials: Testimonial[] = [
 ];
 
 export const gallery: GalleryImage[] = [
-  { src: photo4, alt: "Bright, welcoming entrance", category: "Environment" },
-  { src: photo5, alt: "Engaged pupils in a classroom", category: "Classrooms" },
-  { src: photo10, alt: "Cultural day celebration", category: "Events" },
-  { src: photo13, alt: "Cultural day celebration", category: "Events" },
-  { src: photo6, alt: "Colourful learning materials", category: "Classrooms" },
-  { src: photo8, alt: "School sports day", category: "Sports" },
-  { src: photo12, alt: "Cultural day celebration", category: "Events" },
-  { src: photo9, alt: "Music and arts class", category: "Arts" },
-  { src: photo7, alt: "Cultural day celebration", category: "Events" },
-  { src: photo11, alt: "Cultural day celebration", category: "Events" },  
-  { src: photo14, alt: "Cultural day celebration", category: "Events" },
-  { src: photo15, alt: "Cultural day celebration", category: "Events" },
+  { src: photo4, category: "Environment" },
+  { src: photo5, category: "Classrooms" },
+  { src: photo10, category: "Events" },
+  { src: photo13, category: "Events" },
+  { src: photo6, category: "Classrooms" },
+  { src: photo8, category: "Sports" },
+  { src: photo12, category: "Events" },
+  { src: photo9, category: "Arts" },
+  { src: photo7, category: "Events" },
+  { src: photo11, category: "Events" },  
+  { src: photo14, category: "Events" },
+  { src: photo15, category: "Events" },
+  { src: photo16, category: "Events" },
 ];
 
 export const galleryCategories = [

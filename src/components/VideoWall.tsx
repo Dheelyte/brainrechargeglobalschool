@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import type { YTVideo } from "@/lib/youtube";
 
 function PlayIcon({ big = false }: { big?: boolean }) {
@@ -26,6 +27,9 @@ export default function VideoWall({
   isLive: boolean;
 }) {
   const [active, setActive] = useState<YTVideo | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     if (!active) return;
@@ -97,7 +101,11 @@ export default function VideoWall({
                   src={v.thumbnail}
                   alt={v.title}
                   fill
-                  sizes="12rem"
+                  // The tile is ~192px wide but object-cover crops a landscape
+                  // thumbnail to portrait, painting it ~3x wider (~620px), so
+                  // request that resolution to keep it sharp on retina screens.
+                  sizes="640px"
+                  quality={90}
                   className="object-cover opacity-90 transition group-hover:scale-105"
                 />
                 <span className="absolute inset-0 grid place-items-center">
@@ -131,41 +139,45 @@ export default function VideoWall({
         </p>
       )}
 
-      {/* Player modal */}
-      {active && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/90 p-4 backdrop-blur-sm"
-          onClick={() => setActive(null)}
-        >
-          <button
-            className="absolute right-5 top-5 grid h-11 w-11 place-items-center rounded-full bg-white/10 text-2xl text-white transition hover:bg-white/20"
-            aria-label="Close"
-          >
-            ✕
-          </button>
+      {/* Player modal — portaled to <body> so it escapes the Videos section's
+          transform/stacking context and paints above the fixed header. */}
+      {mounted &&
+        active &&
+        createPortal(
           <div
-            className={`w-full ${active.isShort ? "max-w-sm" : "max-w-4xl"}`}
-            onClick={(e) => e.stopPropagation()}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/90 p-4 backdrop-blur-sm"
+            onClick={() => setActive(null)}
           >
-            <div
-              className={`relative overflow-hidden rounded-2xl bg-black ${
-                active.isShort ? "aspect-[9/16]" : "aspect-video"
-              }`}
+            <button
+              className="absolute right-5 top-5 grid h-11 w-11 place-items-center rounded-full bg-white/10 text-2xl text-white transition hover:bg-white/20"
+              aria-label="Close"
             >
-              <iframe
-                src={`https://www.youtube.com/embed/${active.id}?autoplay=1&rel=0`}
-                title={active.title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0 h-full w-full"
-              />
+              ✕
+            </button>
+            <div
+              className={`w-full ${active.isShort ? "max-w-sm" : "max-w-4xl"}`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div
+                className={`relative overflow-hidden rounded-2xl bg-black ${
+                  active.isShort ? "aspect-[9/16]" : "aspect-video"
+                }`}
+              >
+                <iframe
+                  src={`https://www.youtube.com/embed/${active.id}?autoplay=1&rel=0`}
+                  title={active.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 h-full w-full"
+                />
+              </div>
+              <p className="mt-3 text-center text-sm font-medium text-white/80">
+                {active.title}
+              </p>
             </div>
-            <p className="mt-3 text-center text-sm font-medium text-white/80">
-              {active.title}
-            </p>
-          </div>
-        </div>
-      )}
+          </div>,
+          document.body,
+        )}
     </>
   );
 }

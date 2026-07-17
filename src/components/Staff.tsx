@@ -5,7 +5,7 @@ import SectionHeading from "./SectionHeading";
 
 export default function Staff() {
   return (
-    <section id="staff" className="relative overflow-hidden bg-cream py-20 lg:py-28">
+    <section id="staff" className="section-fade relative overflow-hidden bg-cream py-20 lg:py-28">
       <div className="blob -left-10 bottom-10 h-72 w-72 bg-accent-200" />
       <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading

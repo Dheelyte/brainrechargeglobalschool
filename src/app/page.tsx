@@ -5,6 +5,7 @@ import About from "@/components/About";
 import Programs from "@/components/Programs";
 import Staff from "@/components/Staff";
 import Gallery from "@/components/Gallery";
+import Graduation from "@/components/Graduation";
 import Videos from "@/components/Videos";
 import Testimonials from "@/components/Testimonials";
 import Admissions from "@/components/Admissions";
@@ -21,6 +22,7 @@ export default function Home() {
         <Programs />
         {/* <Staff /> */}
         <Gallery />
+        <Graduation />
         <Videos />
         {/* <Testimonials /> */}
         <Admissions />

@@ -5,7 +5,7 @@ import SectionHeading from "./SectionHeading";
 
 export default function Programs() {
   return (
-    <section id="programs" className="bg-white py-20 lg:py-28">
+    <section id="programs" className="section-fade bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           eyebrow="Our Programs"
@@ -25,9 +25,6 @@ export default function Programs() {
                     sizes="(max-width: 640px) 100vw, 25vw"
                     className="object-cover transition duration-500 group-hover:scale-110"
                   />
-                  <span className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-ink backdrop-blur">
-                    {p.age}
-                  </span>
                 </div>
                 <div className="p-5">
                   <h3 className={`font-display text-lg font-bold ${p.color}`}>

@@ -4,7 +4,7 @@ import SectionHeading from "./SectionHeading";
 
 export default function WhyUs() {
   return (
-    <section className="relative bg-white py-20 lg:py-28">
+    <section className="section-fade relative bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           eyebrow="Why Parents Choose Us"

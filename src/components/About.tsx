@@ -10,7 +10,7 @@ const pillars = [
 
 export default function About() {
   return (
-    <section id="about" className="relative overflow-hidden bg-cream py-20 lg:py-28">
+    <section id="about" className="section-fade relative overflow-hidden bg-cream py-20 lg:py-28">
       <div className="blob right-0 top-0 h-72 w-72 bg-teal-500/20" />
       <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-2 lg:px-8">
         {/* Images */}

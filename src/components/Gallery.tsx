@@ -30,7 +30,7 @@ export default function Gallery() {
   }, [lightbox, items.length]);
 
   return (
-    <section id="gallery" className="bg-white py-20 lg:py-28">
+    <section id="gallery" className="section-fade bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           eyebrow="Life at BRGS"
@@ -65,15 +65,12 @@ export default function Gallery() {
             >
               <Image
                 src={img.src}
-                alt={img.alt}
+                alt="Brain Recharge Global School"
                 width={600}
                 height={i % 3 === 0 ? 800 : 600}
                 sizes="(max-width: 640px) 50vw, 25vw"
                 className="h-auto w-full object-cover transition duration-500 group-hover:scale-105"
               />
-              <span className="absolute inset-0 flex items-end bg-gradient-to-t from-ink/60 via-transparent to-transparent p-3 opacity-0 transition group-hover:opacity-100">
-                <span className="text-xs font-semibold text-white">{img.alt}</span>
-              </span>
             </button>
           ))}
         </div>
@@ -108,14 +105,11 @@ export default function Gallery() {
           >
             <Image
               src={items[lightbox].src.replace("w=1200", "w=1600")}
-              alt={items[lightbox].alt}
+              alt="Brain Recharge Global School"
               width={1600}
               height={1067}
               className="mx-auto max-h-[85vh] w-auto rounded-2xl object-contain"
             />
-            <p className="mt-3 text-center text-sm text-white/80">
-              {items[lightbox].alt}
-            </p>
           </div>
           <button
             className="absolute right-4 grid h-12 w-12 place-items-center rounded-full bg-white/10 text-2xl text-white transition hover:bg-white/20"

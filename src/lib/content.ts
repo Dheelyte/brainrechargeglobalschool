@@ -23,12 +23,6 @@ export type Program = {
   image: any;
   color: string; // tailwind text color class for the accent
 };
-export type Staff = {
-  name: string;
-  role: string;
-  image: string;
-  bio: string;
-};
 export type Testimonial = {
   quote: string;
   name: string;

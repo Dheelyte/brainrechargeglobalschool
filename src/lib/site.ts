@@ -5,7 +5,7 @@
 export const site = {
   name: "Brain Recharge Global School",
   shortName: "BRGS",
-  tagline: "Where Bright Minds Begin",
+  tagline: "Faith, Dilligence, and Integrity",
   description:
     "Brain Recharge Global School nurtures curious, confident children through joyful learning, caring teachers and a safe, modern environment. Book a tour today.",
   url: "https://brainrechargeglobalschool.com",

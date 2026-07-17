@@ -19,7 +19,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} - Where Bright Minds Begin`,
+    default: `${site.name} - Faith, Dilligence, and Integrity`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     "school admission",
   ],
   openGraph: {
-    title: `${site.name} - Where Bright Minds Begin`,
+    title: `${site.name} - Faith, Dilligence, and Integrity`,
     description: site.description,
     url: site.url,
     siteName: site.name,
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} - Where Bright Minds Begin`,
+    title: `${site.name} - Faith, Dilligence, and Integrity`,
     description: site.description,
   },
 };

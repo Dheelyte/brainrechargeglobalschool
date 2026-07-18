@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { site } from "@/lib/site";
 
 const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
@@ -98,8 +99,14 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-14 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 sm:flex-row">
           <div className="flex items-center gap-3">
-            <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 font-extrabold text-white">
-              B
+            <span className="grid h-10 w-10 place-items-center overflow-hidden rounded-xl bg-white">
+              <Image
+                src="/logo.png"
+                alt={`${site.name} logo`}
+                width={224}
+                height={256}
+                className="h-8 w-auto"
+              />
             </span>
             <div className="leading-tight">
               <p className="font-display font-bold">{site.name}</p>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { site } from "@/lib/site";
 
@@ -25,8 +26,15 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 lg:px-8">
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-brand-600 to-brand-800 text-lg font-extrabold text-white shadow-lg shadow-brand-600/30">
-            B
+          <span className="grid h-10 w-10 place-items-center overflow-hidden rounded-xl bg-white shadow-lg shadow-brand-600/30 ring-1 ring-brand-100">
+            <Image
+              src="/logo.png"
+              alt={`${site.name} logo`}
+              width={224}
+              height={256}
+              priority
+              className="h-8 w-auto"
+            />
           </span>
           <span className="leading-tight">
             <span className="block font-display text-[15px] font-extrabold text-ink">

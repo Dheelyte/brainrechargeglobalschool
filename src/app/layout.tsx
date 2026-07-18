@@ -56,9 +56,9 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${poppins.variable} h-full antialiased`}
     >
-      <Analytics />
       <body className="min-h-full flex flex-col bg-white text-ink">
         {children}
+        <Analytics />
       </body>
     </html>
   );

@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
@@ -55,6 +56,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${poppins.variable} h-full antialiased`}
     >
+      <Analytics />
       <body className="min-h-full flex flex-col bg-white text-ink">
         {children}
       </body>

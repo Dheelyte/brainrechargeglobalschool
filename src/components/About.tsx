@@ -10,7 +10,7 @@ const pillars = [
 
 export default function About() {
   return (
-    <section id="about" className="section-fade relative overflow-hidden bg-cream py-20 lg:py-28">
+    <section id="about" className="relative overflow-hidden bg-cream py-20 lg:py-28">
       <div className="blob right-0 top-0 h-72 w-72 bg-teal-500/20" />
       <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-2 lg:px-8">
         {/* Images */}
@@ -39,7 +39,7 @@ export default function About() {
             Brain Recharge Global School was founded on a simple belief: when
             children feel safe, valued and inspired, they flourish. Our warm
             teachers, vibrant classrooms and well-rounded curriculum give every
-            pupil the foundation to succeed - academically and in life.
+            pupil the foundation to succeed - academically and in every sphere of life.
           </p>
 
           <div className="mt-8 grid gap-5 sm:grid-cols-2">

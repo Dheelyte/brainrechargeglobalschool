@@ -30,7 +30,7 @@ export default function Gallery() {
   }, [lightbox, items.length]);
 
   return (
-    <section id="gallery" className="section-fade bg-white py-20 lg:py-28">
+    <section id="gallery" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           eyebrow="Life at BRGS"

@@ -117,24 +117,6 @@ body {
 .hero-pop { animation: hero-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.7s both; }
 .hero-underline { stroke-dasharray: 1; animation: hero-draw 0.9s ease-out 0.9s both; }
 
-/* Section fade-in, driven purely by scroll position (no JS): each section
-   fades and rises as it enters the viewport. Browsers without scroll
-   timelines skip it and simply show the sections. */
-@keyframes section-fade-in {
-  from { opacity: 0; transform: translateY(36px); }
-  to { opacity: 1; transform: none; }
-}
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .section-fade {
-      animation: section-fade-in linear both;
-      animation-timeline: view();
-      /* Start as the section enters; fully faded in after ~30% of its pass. */
-      animation-range: entry 0% cover 30%;
-    }
-  }
-}
-
 /* Graduands strip: auto-slides via the marquee keyframes; the component
    pauses it (inline animation-play-state) until fully scrolled into view. */
 .grad-viewport {

@@ -41,7 +41,7 @@ export const whyUs: WhyUsItem[] = [
   {
     icon: "🌟",
     title: "Small, Caring Classes",
-    body: "Low pupil-to-teacher ratios mean every child is seen, known and supported every single day.",
+    body: "Pupil-to-teacher ratio is inline with global practice. Every child is seen, known and supported every single day.",
   },
   {
     icon: "🛡️",
@@ -66,7 +66,7 @@ export const whyUs: WhyUsItem[] = [
   {
     icon: "🤝",
     title: "Strong Parent Partnership",
-    body: "Regular updates, open days and an active community keep families close to their child's journey.",
+    body: "Regular updates, open days, PTA meetings and an active community keep families close to their child's journey.",
   },
 ];
 
@@ -95,7 +95,7 @@ export const programs: Program[] = [
   {
     name: "Upper Primary",
     blurb:
-      "Confident, independent learners prepared for secondary school through rich academics and leadership.",
+      "Confident, independent learners prepared for secondary school through exposure to cognitive, affective, and psychomotor domains of learning.",
     image: grade4,
     color: "text-brand-500",
   },

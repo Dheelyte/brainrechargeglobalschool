@@ -10,7 +10,7 @@ const collage = [
 
 export default function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden bg-cream pt-28 pb-20 lg:pt-36 lg:pb-28">
+    <section id="home" className="relative overflow-hidden bg-cream pt-10 pb-20 lg:pt-14 lg:pb-28">
       {/* Decorative blobs */}
       <div className="blob -left-24 top-10 h-72 w-72 bg-brand-200" />
       <div className="blob -right-16 top-40 h-80 w-80 bg-accent-200" />
@@ -23,7 +23,7 @@ export default function Hero() {
             Now accepting admissions for the new session
           </span>
 
-          <h1
+          <h2
             className="hero-rise mt-5 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-ink text-balance sm:text-5xl lg:text-6xl"
             style={{ animationDelay: "0.1s" }}
           >
@@ -47,14 +47,14 @@ export default function Hero() {
               </svg>
             </span>{" "}
             begin to shine
-          </h1>
+          </h2>
 
           <p
             className="hero-rise mt-6 max-w-xl text-lg leading-relaxed text-ink/70"
             style={{ animationDelay: "0.2s" }}
           >
             At {site.name}, every child is known, nurtured and inspired to love
-            learning - in a safe, joyful and modern environment they can&apos;t wait
+            learning - in a safe, joyful and conducive environment that they can&apos;t wait
             to come back to.
           </p>
 

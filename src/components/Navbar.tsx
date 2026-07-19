@@ -15,6 +15,10 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // At the top the header sits over the dark welcome banner, so use light
+  // text; once scrolled it turns into a solid white bar with dark text.
+  const onBanner = !scrolled;
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
@@ -28,7 +32,7 @@ export default function Navbar() {
         <a href="#home" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
           <span className="grid h-10 w-10 place-items-center overflow-hidden rounded-xl bg-white shadow-lg shadow-brand-600/30 ring-1 ring-brand-100">
             <Image
-              src="/logo.png"
+              src="/apple-touch-icon.png"
               alt={`${site.name} logo`}
               width={224}
               height={256}
@@ -37,10 +41,18 @@ export default function Navbar() {
             />
           </span>
           <span className="leading-tight">
-            <span className="block font-display text-[15px] font-extrabold text-ink">
+            <span
+              className={`block font-display text-[15px] font-extrabold transition-colors ${
+                onBanner ? "text-white" : "text-ink"
+              }`}
+            >
               Brain Recharge
             </span>
-            <span className="block text-[11px] font-semibold tracking-wide text-brand-600">
+            <span
+              className={`block text-[11px] font-semibold tracking-wide transition-colors ${
+                onBanner ? "text-white/80" : "text-brand-600"
+              }`}
+            >
               GLOBAL SCHOOL
             </span>
           </span>
@@ -52,7 +64,11 @@ export default function Navbar() {
             <li key={item.href}>
               <a
                 href={item.href}
-                className="rounded-full px-3.5 py-2 text-sm font-medium text-ink/75 transition hover:bg-brand-50 hover:text-brand-700"
+                className={`rounded-full px-3.5 py-2 text-sm font-medium transition ${
+                  onBanner
+                    ? "text-white/90 hover:bg-white/15 hover:text-white"
+                    : "text-ink/75 hover:bg-brand-50 hover:text-brand-700"
+                }`}
               >
                 {item.label}
               </a>
@@ -73,7 +89,9 @@ export default function Navbar() {
         <button
           aria-label="Toggle menu"
           onClick={() => setOpen((o) => !o)}
-          className="grid h-10 w-10 place-items-center rounded-lg text-ink lg:hidden"
+          className={`grid h-10 w-10 place-items-center rounded-lg transition-colors lg:hidden ${
+            onBanner && !open ? "text-white" : "text-ink"
+          }`}
         >
           <span className="relative block h-4 w-6">
             <span

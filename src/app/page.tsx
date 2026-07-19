@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Welcome from "@/components/Welcome";
 import Hero from "@/components/Hero";
 import WhyUs from "@/components/WhyUs";
 import About from "@/components/About";
@@ -15,15 +16,14 @@ export default function Home() {
     <>
       <Navbar />
       <main className="flex-1">
+        <Welcome />
         <Hero />
         <WhyUs />
         <About />
         <Programs />
-        {/* <Staff /> */}
         <Gallery />
         <Graduation />
         <Videos />
-        {/* <Testimonials /> */}
         <Admissions />
       </main>
       <Footer />

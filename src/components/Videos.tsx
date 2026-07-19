@@ -9,7 +9,7 @@ export default async function Videos() {
   return (
     <section
       id="videos"
-      className="section-fade relative overflow-hidden bg-gradient-to-b from-brand-800 to-brand-900 py-20 lg:py-28"
+      className="relative overflow-hidden bg-gradient-to-b from-brand-800 to-brand-900 py-20 lg:py-28"
     >
       <div className="blob -right-10 top-10 h-80 w-80 bg-brand-500/40" />
       <div className="blob -left-10 bottom-10 h-72 w-72 bg-accent-500/20" />

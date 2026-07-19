@@ -15,8 +15,8 @@ const contactCards = [
   {
     icon: "📞",
     label: "Call us",
-    value: site.phone,
-    href: `tel:${site.phone}`,
+    value: `${site.phone[0]}, ${site.phone[1]}`,
+    href: `tel:${site.phone[0]}`,
     cta: { label: "Call now ↗", href: `tel:${site.phone}` },
   },
   {
@@ -31,7 +31,7 @@ const contactCards = [
 
 export default function Footer() {
   return (
-    <footer id="contact" className="section-fade relative overflow-hidden bg-ink text-white">
+    <footer id="contact" className="relative overflow-hidden bg-ink text-white">
       <div className="blob -left-10 top-0 h-72 w-72 bg-brand-600/30" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
@@ -47,11 +47,14 @@ export default function Footer() {
                 {c.label}
               </p>
               {c.href ? (
-                <a href={c.href} className="mt-1 block font-medium text-white hover:text-accent-300">
+                <a
+                  href={c.href}
+                  className="mt-1 block break-words font-medium text-white hover:text-accent-300"
+                >
                   {c.value}
                 </a>
               ) : (
-                <p className="mt-1 font-medium text-white/90">{c.value}</p>
+                <p className="mt-1 break-words font-medium text-white/90">{c.value}</p>
               )}
               {c.cta && (
                 <a
@@ -101,7 +104,7 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <span className="grid h-10 w-10 place-items-center overflow-hidden rounded-xl bg-white">
               <Image
-                src="/logo.png"
+                src="/apple-touch-icon.png"
                 alt={`${site.name} logo`}
                 width={224}
                 height={256}

@@ -5,7 +5,7 @@ import SectionHeading from "./SectionHeading";
 
 export default function Programs() {
   return (
-    <section id="programs" className="section-fade bg-white py-20 lg:py-28">
+    <section id="programs" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           eyebrow="Our Programs"

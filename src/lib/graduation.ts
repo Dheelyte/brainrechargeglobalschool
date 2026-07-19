@@ -28,12 +28,55 @@ import g25 from "@/photos/graduation/25.jpeg";
 import g26 from "@/photos/graduation/26.jpeg";
 import g27 from "@/photos/graduation/27.jpeg";
 
-export type GraduationPhoto = { image: StaticImageData; set: string };
+export type GradLevel = "Kindergarten" | "Primary";
+export type GraduationPhoto = {
+  image: StaticImageData;
+  set: string;
+  name: string;
+  level: GradLevel;
+};
 
-const set2526 = [g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12];
-const set2425 = [g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25, g26, g27];
+type Entry = { image: StaticImageData; name: string; level: GradLevel };
+
+/**
+ * 👉 Fill in each graduand's real `name` and `level` ("Nursery" or "Primary").
+ *    Order matches the photo files (1–27). The names/levels below are
+ *    PLACEHOLDERS — replace them with the real details.
+ */
+const set2526: Entry[] = [
+  { image: g1, name: "ADESANYA OLUWATOBILOBA D.", level: "Primary" },
+  { image: g2, name: "ADEYEYE GOD'SWILL O.", level: "Primary" },
+  { image: g3, name: "IFEANYI CHINEMEREMU D.", level: "Primary" },
+  { image: g4, name: "LINUS DAVID CHIMDINDU", level: "Primary" },
+  { image: g5, name: "ILECHUKWU DAVID C.", level: "Kindergarten" },
+  { image: g6, name: "SHOFOLAHAN IREMIDE", level: "Kindergarten" },
+  { image: g7, name: "OCHUKO SHINDARA V.", level: "Kindergarten" },
+  { image: g8, name: "FALANA OREOLUWA D.", level: "Kindergarten" },
+  { image: g9, name: "KUMODE CLEMENCE A.", level: "Kindergarten" },
+  { image: g10, name: "CLAUDE DORCAS O.", level: "Kindergarten" },
+  { image: g11, name: "ADELAGAN ANUOLUWAPO A.", level: "Kindergarten" },
+  { image: g12, name: "ADEGA ADEBUSAYO A.", level: "Kindergarten" },
+];
+
+const set2425: Entry[] = [
+  { image: g13, name: "FOLORUNSHO REBECCA", level: "Primary" },
+  { image: g14, name: "OYELADE ABDULALEEM O.", level: "Primary" },
+  { image: g15, name: "SAKA ABDULBASIT A.", level: "Primary" },
+  { image: g16, name: "ANISIOBI PRECIOUS A.", level: "Primary" },
+  { image: g17, name: "OKAFOR CHISOM A.", level: "Primary" },
+  { image: g18, name: "ADONIS WINNIE O.", level: "Primary" },
+  { image: g19, name: "ADEGBOYEGA PAUL", level: "Primary" },
+  { image: g20, name: "RAHEEM AYOMIDE K.", level: "Primary" },
+  { image: g21, name: "OGUNTOYINBO JOHNSON O.", level: "Kindergarten" },
+  { image: g22, name: "ADESANYA OLUWATIMILEHIN E.", level: "Kindergarten" },
+  { image: g23, name: "ADEYEYE GOD'SGIFT A.", level: "Kindergarten" },
+  { image: g24, name: "IGWEBUIKE GIANNA O.", level: "Kindergarten" },
+  { image: g25, name: "ADEKANBI ISRAEL O.", level: "Kindergarten" },
+  { image: g26, name: "OKAFOR SOMTOCHUKWU E.", level: "Kindergarten" },
+  { image: g27, name: "ODEYINKA ADEOLA", level: "Kindergarten" },
+];
 
 export const graduationPhotos: GraduationPhoto[] = [
-  ...set2526.map((image) => ({ image, set: "2025/2026" })),
-  ...set2425.map((image) => ({ image, set: "2024/2025" })),
+  ...set2526.map((e) => ({ ...e, set: "2025/2026" })),
+  ...set2425.map((e) => ({ ...e, set: "2024/2025" })),
 ];

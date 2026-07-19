@@ -23,7 +23,7 @@ export default function Graduation() {
   }, []);
 
   return (
-    <section id="graduation" className="section-fade overflow-hidden bg-cream py-20 lg:py-28">
+    <section id="graduation" className="overflow-hidden bg-cream py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           eyebrow="Graduation"
@@ -54,12 +54,22 @@ export default function Graduation() {
               >
                 <Image
                   src={photo.image}
-                  alt={isDuplicate ? "" : `Graduand of the ${photo.set} set`}
+                  alt={isDuplicate ? "" : `${photo.name} — ${photo.level} graduand, ${photo.set} set`}
                   sizes="14rem"
                   className="h-64 w-auto object-cover sm:h-72"
                 />
-                <figcaption className="absolute bottom-2.5 left-2.5 rounded-full bg-ink/70 px-3 py-1 text-xs font-bold text-white backdrop-blur-sm">
-                  {photo.set} Set
+                {/* Level pill (top) */}
+                <span className="absolute right-2.5 top-2.5 rounded-full bg-brand-600/90 px-2.5 py-0.5 text-[11px] font-bold text-white backdrop-blur-sm">
+                  {photo.level}
+                </span>
+                {/* Name + set (bottom) */}
+                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 via-ink/50 to-transparent px-3 pb-3 pt-8 text-left">
+                  <p className="truncate font-display text-sm font-bold text-white">
+                    {photo.name}
+                  </p>
+                  <p className="text-[11px] font-semibold text-white/70">
+                    {photo.set} Set
+                  </p>
                 </figcaption>
               </figure>
             );

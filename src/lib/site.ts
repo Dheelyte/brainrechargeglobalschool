@@ -11,7 +11,7 @@ export const site = {
   url: "https://brainrechargeglobalschool.com",
 
   // 👉 Replace with your real details
-  email: "admissions@brainrechargeglobalschool.com",
+  email: "brainrechargeglobalschool@gmail.com",
   phone: ["+2348083963085", "+2348023327254"],
   whatsapp: "2348083963085", // digits only, with country code
   address: "2, Abike Onabiyi Close, Coker Alhaja Str, Obawole, Ifako-Ijaye, Lagos.",
